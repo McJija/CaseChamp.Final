@@ -1,0 +1,4 @@
+copy,n,n_answer_tumor,still_tumor_after_occ,via_contour_after_occ,via_threshold_only_after_occ,contour_found_before,n_paired,flip_rate_all,drop_p_all,flip_rate,flip_rate_control,flip_rate_minus_control,drop_p,drop_p_control
+0,391,386,0.9197,0.8005,0.1192,0.987,319,0.0803,0.0077,0.0784,0.0,0.0784,0.0072,-0.0009
+1,391,387,0.9044,0.77,0.1344,0.9819,320,0.0956,0.0102,0.0969,0.0,0.0969,0.01,0.0005
+2,391,384,0.8958,0.7578,0.138,0.9792,317,0.1042,0.0092,0.1136,0.0,0.1136,0.009,-0.0005

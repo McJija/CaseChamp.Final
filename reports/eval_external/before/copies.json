@@ -1,0 +1,14 @@
+[
+ {
+  "classifier": "run1_cls_s42_20261008-120915",
+  "segmenter": "run1_seg_neg_s42_20261013-170459"
+ },
+ {
+  "classifier": "run1_cls_s43_20261008-121251",
+  "segmenter": "run1_seg_neg_s43_20261013-171854"
+ },
+ {
+  "classifier": "run1_cls_s44_20261008-121624",
+  "segmenter": "run1_seg_neg_s44_20261013-173251"
+ }
+]

@@ -1,0 +1,47 @@
+# Пометка «проверьте» (src/confidence.py). Выбрана только на val.
+rule:
+  name: 'E0.6: C + тип неуверенный (< 0.6)'
+  signals:
+  - presence
+  - type
+  - models
+  - type_prob
+  type_prob_min: 0.6
+chosen_on: наш val + внешний val
+passes_p5_on_val: true
+val:
+  наш val:
+    n: 525
+    errors: 18
+    flagged: 50
+    flagged_share: 0.09523809523809523
+    caught: 17
+    caught_share: 0.9444444444444444
+    err_flagged: 0.34
+    err_confident: 0.002105263157894737
+    ratio: 161.50000000000003
+    passes: true
+  внешний val:
+    n: 1003
+    errors: 58
+    flagged: 150
+    flagged_share: 0.14955134596211367
+    caught: 40
+    caught_share: 0.6896551724137931
+    err_flagged: 0.26666666666666666
+    err_confident: 0.021101992966002344
+    ratio: 12.637037037037038
+    passes: true
+  оба val:
+    n: 1528
+    errors: 76
+    flagged: 200
+    flagged_share: 0.13089005235602094
+    caught: 57
+    caught_share: 0.75
+    err_flagged: 0.285
+    err_confident: 0.01430722891566265
+    ratio: 19.919999999999998
+    passes: true
+date: 2026-11-13 21:05
+pred: reports/eval_external/run3_val/predictions.csv

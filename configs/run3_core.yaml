@@ -1,0 +1,12 @@
+# Этап 3 подготовки к финалу, ядро и отек при глиобластоме (src/train_aux.py, kind: core): smp.Unet, два выхода —
+# ядро (метки UPENN-GBM 1 + 3) и вся опухоль (1 + 2 + 3), отек = разность. Срезы UPENN-GBM train всех плоскостей,
+# с опухолью и без (пустая маска). Вход — T1 с контрастом. Эпоха — наибольшее среднее Dice ядра и Dice отека на
+# UPENN val. Seed 42, 43, 44 (три копии — для неуверенной границы). Для сравнения — run3_core_flair (П7).
+_base_: base.yaml
+run: run3_core
+kind: core
+model:
+  inputs: t1c
+train:
+  epochs: 40
+  epochs_frozen: 5

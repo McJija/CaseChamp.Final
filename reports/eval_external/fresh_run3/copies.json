@@ -1,0 +1,14 @@
+[
+ {
+  "classifier": "run3_cls_s42_20261113-155001",
+  "segmenter": "run3_seg_s42_20261113-141906"
+ },
+ {
+  "classifier": "run3_cls_s43_20261113-155736",
+  "segmenter": "run3_seg_s43_20261113-144952"
+ },
+ {
+  "classifier": "run3_cls_s44_20261113-160510",
+  "segmenter": "run3_seg_s44_20261113-151954"
+ }
+]

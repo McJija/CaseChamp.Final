@@ -1,0 +1,13 @@
+{
+ "system": "configs/system_run3.yaml",
+ "commit": "06c99c6",
+ "files": {
+  "models/run3_cls_s42_20261113-155001/best.pt": "b00555e4785f3da08898f8eff4612e9f",
+  "models/run3_seg_s42_20261113-141906/best.pt": "85d588d667bece841292d1fd73980605",
+  "models/run3_cls_s43_20261113-155736/best.pt": "e6a653677a28521f94f04fc569abb2d1",
+  "models/run3_seg_s43_20261113-144952/best.pt": "e3314424eb72a393075912537ea33854",
+  "models/run3_cls_s44_20261113-160510/best.pt": "d8b15a3a8b40930f5a46bbdf2ebe194f",
+  "models/run3_seg_s44_20261113-151954/best.pt": "56acecaa6a9492f13487da2d1a4f4751",
+  "models/run3_core_s42_20261113-161243/best.pt": "eee1bdae6d5ef0fb516d5838bb2e5a18"
+ }
+}

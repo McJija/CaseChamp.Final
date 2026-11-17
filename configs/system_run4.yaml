@@ -1,0 +1,11 @@
+# Кандидат круга 4 (выравнивание резкости и шума, R = 224). models/final не заменяет без правила П2ф и «ок» руководителя проекта
+# после подробного сравнения. Модель типа run4_cls и модель контура run4_seg, seed 42 — основная, 43 и 44 — копии.
+# Порог и «проверьте» — по тем же правилам и только на val, что у run3.
+name: "кандидат круга 4 (`run4_cls` + `run4_seg`, порог `configs/presence_run4.yaml`)"
+presence: configs/presence_run4.yaml
+check_final: false
+copies:
+  - {classifier: run4_cls_s42_*, segmenter: run4_seg_s42_*}
+  - {classifier: run4_cls_s43_*, segmenter: run4_seg_s43_*}
+  - {classifier: run4_cls_s44_*, segmenter: run4_seg_s44_*}
+confidence: configs/confidence_run4.yaml   # пометка «проверьте» — выбирается только на val (src/confidence.py), как у run3

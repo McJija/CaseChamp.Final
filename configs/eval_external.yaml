@@ -1,0 +1,43 @@
+# Правила проверки П1–П8 (этап 11). Записаны и закоммичены ДО замера «до» (2026-11-12, «ок» руководителя проекта).
+# Этот файл читает src/eval_external.py; менять числа после замера нельзя
+# без прямого решения руководителя проекта.
+
+system:  # нынешняя система (models/final): классификатор run1_cls s42 + сегментатор run1_seg_neg s42
+  presence: models/final/presence.yaml   # опухоль есть: площадь маски > min_area_px ИЛИ p_tumor ≥ cls_threshold
+  copies:                                # три копии системы для уверенности (П5) и П3: seed 42, 43, 44, тот же порог
+    - {classifier: run1_cls_s42_*, segmenter: run1_seg_neg_s42_*}
+    - {classifier: run1_cls_s43_*, segmenter: run1_seg_neg_s43_*}
+    - {classifier: run1_cls_s44_*, segmenter: run1_seg_neg_s44_*}
+
+bootstrap: {unit: group, n: 2000, seed: 42}  # интервалы — по пациентам
+
+main_check:  # П1: ошибка — ответ «опухоль есть» на срезе без опухоли
+  table: data/processed/external_slices.csv
+  split: check
+  has_tumor: false
+  mode: t1c          # склероз 300 + шванномы 1093 (режим «?» у шванном — отдельно, не в главной мере)
+  alongside_split: holdout   # UPENN-GBM и BraTS-MEN-RT: «тот же источник, что в обучении»
+
+replacement:  # П2 (+ подтверждение руководителя проекта после подробного сравнения)
+  min_drop_main_check_pp: 20
+  max_recall_drop_val_pp: 1
+
+glioma_shortcut:  # П3: доля менингиом и гипофиза нашего val с типом «глиома», среднее трех копий
+  max_rise_pp: 2
+
+presence_vote:  # П4: модель «опухоль есть / нет» как голос
+  min_drop_main_check_pp: 5
+  max_recall_drop_val_pp: 1
+
+confidence:  # П5
+  min_pair_dice: 0.7          # средний попарный Dice масок трех копий ниже — «проверьте»
+  empty_mask_px: 50           # маска площадью ≤ 50 пикселей (координаты модели) — пустая
+  min_error_ratio: 3.0        # доля ошибок среди «проверьте» / среди «уверенно»
+  min_errors_caught: 0.5      # доля всех ошибок, попавших в «проверьте»
+  max_flagged: 0.25           # доля снимков с «проверьте»
+
+mode_detector:  # П6
+  min_t1c_precision: 0.95
+
+consistency:  # П8
+  required: 1.0

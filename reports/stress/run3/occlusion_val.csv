@@ -1,0 +1,4 @@
+run,config,seed,commit,split,n_answer_tumor,n_paired,flip_rate_all,drop_p_all,flip_rate,flip_rate_control,flip_rate_minus_control,drop_p,drop_p_control
+run3_cls_s42_20261113-155001,run3_cls,42,6712730,val,391,324,0.0,0.0078,0.0,0.0,0.0,0.0074,-0.0007
+run3_cls_s43_20261113-155736,run3_cls,43,6712730,val,391,324,0.0,0.0093,0.0,0.0,0.0,0.0089,0.0001
+run3_cls_s44_20261113-160510,run3_cls,44,6712730,val,391,324,0.0,0.0089,0.0,0.0,0.0,0.0086,-0.0009

@@ -1,0 +1,264 @@
+{
+ "tag": "after",
+ "model": "run3_mode_s42_20261113-165520",
+ "min_t1c_precision": 0.95,
+ "rule_sets": [
+  "upenn_holdout",
+  "ms_check",
+  "case"
+ ],
+ "checked": [
+  "upenn_holdout",
+  "ms_check",
+  "case"
+ ],
+ "passes": false,
+ "sets": {
+  "upenn_val": {
+   "n": 628,
+   "patients": 29,
+   "by_mode": {
+    "t1c": 157,
+    "t1": 157,
+    "t2": 157,
+    "flair": 157
+   },
+   "t1c_precision": {
+    "k": 157,
+    "n": 157,
+    "rate": 1.0,
+    "lo": 1.0,
+    "hi": 1.0,
+    "wilson_lo": 0.9761156317768538,
+    "wilson_hi": 1.0
+   },
+   "t1c_recall": {
+    "k": 157,
+    "n": 157
+   },
+   "has_other_modes": true,
+   "accuracy": 0.9936305732484076,
+   "confusion": {
+    "t1c": {
+     "t1c": 157,
+     "t1": 0,
+     "t2": 0,
+     "flair": 0
+    },
+    "t1": {
+     "t1c": 0,
+     "t1": 153,
+     "t2": 0,
+     "flair": 4
+    },
+    "t2": {
+     "t1c": 0,
+     "t1": 0,
+     "t2": 157,
+     "flair": 0
+    },
+    "flair": {
+     "t1c": 0,
+     "t1": 0,
+     "t2": 0,
+     "flair": 157
+    }
+   }
+  },
+  "upenn_holdout": {
+   "n": 772,
+   "patients": 30,
+   "by_mode": {
+    "t1c": 193,
+    "t1": 193,
+    "t2": 193,
+    "flair": 193
+   },
+   "t1c_precision": {
+    "k": 193,
+    "n": 193,
+    "rate": 1.0,
+    "lo": 1.0,
+    "hi": 1.0,
+    "wilson_lo": 0.9804838001723212,
+    "wilson_hi": 0.9999999999999999
+   },
+   "t1c_recall": {
+    "k": 193,
+    "n": 193
+   },
+   "has_other_modes": true,
+   "accuracy": 0.9948186528497409,
+   "confusion": {
+    "t1c": {
+     "t1c": 193,
+     "t1": 0,
+     "t2": 0,
+     "flair": 0
+    },
+    "t1": {
+     "t1c": 0,
+     "t1": 193,
+     "t2": 0,
+     "flair": 0
+    },
+    "t2": {
+     "t1c": 0,
+     "t1": 0,
+     "t2": 190,
+     "flair": 3
+    },
+    "flair": {
+     "t1c": 0,
+     "t1": 1,
+     "t2": 0,
+     "flair": 192
+    }
+   }
+  },
+  "ms_check": {
+   "n": 1200,
+   "patients": 30,
+   "by_mode": {
+    "t1c": 300,
+    "t1": 300,
+    "t2": 300,
+    "flair": 300
+   },
+   "t1c_precision": {
+    "k": 5,
+    "n": 8,
+    "rate": 0.625,
+    "lo": 0.25,
+    "hi": 0.875,
+    "wilson_lo": 0.30573785458380187,
+    "wilson_hi": 0.863158240538479
+   },
+   "t1c_recall": {
+    "k": 5,
+    "n": 300
+   },
+   "has_other_modes": true,
+   "accuracy": 0.5791666666666667,
+   "confusion": {
+    "t1c": {
+     "t1c": 5,
+     "t1": 139,
+     "t2": 3,
+     "flair": 153
+    },
+    "t1": {
+     "t1c": 0,
+     "t1": 219,
+     "t2": 2,
+     "flair": 79
+    },
+    "t2": {
+     "t1c": 0,
+     "t1": 0,
+     "t2": 294,
+     "flair": 6
+    },
+    "flair": {
+     "t1c": 3,
+     "t1": 88,
+     "t2": 32,
+     "flair": 177
+    }
+   }
+  },
+  "case": {
+   "n": 388,
+   "patients": 298,
+   "by_mode": {
+    "t1": 135,
+    "t2": 122,
+    "flair": 118,
+    "t1c": 13
+   },
+   "t1c_precision": {
+    "k": 2,
+    "n": 19,
+    "rate": 0.10526315789473684,
+    "lo": 0.0,
+    "hi": 0.3333333333333333,
+    "wilson_lo": 0.029357941395096593,
+    "wilson_hi": 0.313945504948417
+   },
+   "t1c_recall": {
+    "k": 2,
+    "n": 13
+   },
+   "has_other_modes": true,
+   "accuracy": 0.5850515463917526,
+   "confusion": {
+    "t1c": {
+     "t1c": 2,
+     "t1": 8,
+     "t2": 3,
+     "flair": 0
+    },
+    "t1": {
+     "t1c": 12,
+     "t1": 29,
+     "t2": 24,
+     "flair": 70
+    },
+    "t2": {
+     "t1c": 2,
+     "t1": 0,
+     "t2": 93,
+     "flair": 27
+    },
+    "flair": {
+     "t1c": 3,
+     "t1": 4,
+     "t2": 8,
+     "flair": 103
+    }
+   },
+   "ct": {
+    "n": 33,
+    "called": {
+     "flair": 29,
+     "t1c": 2,
+     "t1": 2
+    }
+   },
+   "two_reviewers": {
+    "n": 117,
+    "t1c_precision": "2 из 5"
+   }
+  },
+  "figshare": {
+   "n": 3064,
+   "patients": 207,
+   "by_mode": {
+    "t1c": 3064
+   },
+   "t1c_precision": {
+    "k": 794,
+    "n": 794,
+    "rate": 1.0,
+    "lo": 1.0,
+    "hi": 1.0,
+    "wilson_lo": 0.9951850091546994,
+    "wilson_hi": 1.0
+   },
+   "t1c_recall": {
+    "k": 794,
+    "n": 3064
+   },
+   "has_other_modes": false,
+   "accuracy": 0.2591383812010444,
+   "confusion": {
+    "t1c": {
+     "t1c": 794,
+     "t1": 74,
+     "t2": 147,
+     "flair": 2049
+    }
+   }
+  }
+ }
+}

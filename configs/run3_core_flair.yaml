@@ -1,0 +1,10 @@
+# То же, что run3_core, единственное отличие — вход T1 с контрастом + FLAIR того же среза (каналы T1c, FLAIR, T1c;
+# FLAIR приведен к геометрии T1c — src/build_core_cache.py). Одна копия (seed 42), только для сравнения по П7.
+_base_: base.yaml
+run: run3_core_flair
+kind: core
+model:
+  inputs: t1c_flair
+train:
+  epochs: 40
+  epochs_frozen: 5

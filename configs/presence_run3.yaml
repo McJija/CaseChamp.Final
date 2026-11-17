@@ -1,0 +1,148 @@
+# Порог решения «опухоль есть» по двум моделям (src/presence.py). Подобран только на val.
+rule: опухоль есть, если площадь маски сегментатора > min_area_px ИЛИ p_tumor классификатора
+  ≥ cls_threshold
+cls_threshold: 0.989005
+min_area_px: 50
+recall_floor: 0.985
+recall_on: наш val
+specificity_on: наш и внешний val
+chosen_on: val
+classifier: run3_cls_s42_*
+segmenter: run3_seg_s42_*
+date: 2026-11-13 20:38
+val:
+  n_tumor: 469
+  n_no_tumor: 56
+  recall: 0.9851
+  tumors_found: 462
+  specificity: 0.9464
+  no_tumor_correct: 53
+  found_figshare: 386/391
+  found_figshare_crop: 17/18
+  found_other: 59/60
+  no_tumor_correct_T1: 17/20
+  no_tumor_correct_другой режим: 36/36
+  classifier_alone:
+    recall: 0.9979
+    no_tumor_correct: 47
+  flag_models_disagree:
+    no_tumor: 11
+    tumor: 11
+  ext_menrt:
+    n_tumor: 187
+    tumors_found: 156
+    recall: 0.8342
+    n_no_tumor: 264
+    no_tumor_correct: 259
+    specificity: 0.9811
+    no_tumor_errors_by_model:
+      contour: 5
+      type_over_threshold: 0
+    classifier_alone:
+      recall: 0.8075
+      no_tumor_correct: 232
+  ext_upenn:
+    n_tumor: 293
+    tumors_found: 283
+    recall: 0.9659
+    n_no_tumor: 259
+    no_tumor_correct: 255
+    specificity: 0.9846
+    no_tumor_errors_by_model:
+      contour: 3
+      type_over_threshold: 1
+    classifier_alone:
+      recall: 0.8908
+      no_tumor_correct: 232
+  both_val_no_tumor_correct: 567/579
+val_other_segmenter_seeds:
+  run3_cls_s43_* + run3_seg_s43_*:
+    n_tumor: 469
+    n_no_tumor: 56
+    recall: 0.9872
+    tumors_found: 463
+    specificity: 1.0
+    no_tumor_correct: 56
+    found_figshare: 387/391
+    found_figshare_crop: 17/18
+    found_other: 59/60
+    no_tumor_correct_T1: 20/20
+    no_tumor_correct_другой режим: 36/36
+    classifier_alone:
+      recall: 0.9979
+      no_tumor_correct: 48
+    flag_models_disagree:
+      no_tumor: 8
+      tumor: 12
+    ext_menrt:
+      n_tumor: 187
+      tumors_found: 155
+      recall: 0.8289
+      n_no_tumor: 264
+      no_tumor_correct: 257
+      specificity: 0.9735
+      no_tumor_errors_by_model:
+        contour: 7
+        type_over_threshold: 0
+      classifier_alone:
+        recall: 0.8128
+        no_tumor_correct: 227
+    ext_upenn:
+      n_tumor: 293
+      tumors_found: 280
+      recall: 0.9556
+      n_no_tumor: 259
+      no_tumor_correct: 256
+      specificity: 0.9884
+      no_tumor_errors_by_model:
+        contour: 2
+        type_over_threshold: 1
+      classifier_alone:
+        recall: 0.8874
+        no_tumor_correct: 231
+    both_val_no_tumor_correct: 569/579
+  run3_cls_s44_* + run3_seg_s44_*:
+    n_tumor: 469
+    n_no_tumor: 56
+    recall: 0.9829
+    tumors_found: 461
+    specificity: 0.9464
+    no_tumor_correct: 53
+    found_figshare: 384/391
+    found_figshare_crop: 17/18
+    found_other: 60/60
+    no_tumor_correct_T1: 19/20
+    no_tumor_correct_другой режим: 34/36
+    classifier_alone:
+      recall: 0.9979
+      no_tumor_correct: 48
+    flag_models_disagree:
+      no_tumor: 10
+      tumor: 17
+    ext_menrt:
+      n_tumor: 187
+      tumors_found: 164
+      recall: 0.877
+      n_no_tumor: 264
+      no_tumor_correct: 256
+      specificity: 0.9697
+      no_tumor_errors_by_model:
+        contour: 8
+        type_over_threshold: 1
+      classifier_alone:
+        recall: 0.7968
+        no_tumor_correct: 236
+    ext_upenn:
+      n_tumor: 293
+      tumors_found: 283
+      recall: 0.9659
+      n_no_tumor: 259
+      no_tumor_correct: 256
+      specificity: 0.9884
+      no_tumor_errors_by_model:
+        contour: 2
+        type_over_threshold: 1
+      classifier_alone:
+        recall: 0.8874
+        no_tumor_correct: 233
+    both_val_no_tumor_correct: 565/579

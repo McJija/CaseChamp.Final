@@ -1,0 +1,12 @@
+# Кандидат этапа 3 подготовки к финалу. models/final не заменяет без правила П2 и «ок» руководителя проекта после подробного сравнения.
+# Модель типа run3_cls и модель контура run3_seg, seed 42 — основная, 43 и 44 — копии для уверенности (П5) и П3.
+name: "кандидат этапа 3 (`run3_cls` + `run3_seg`, порог `configs/presence_run3.yaml`)"
+presence: configs/presence_run3.yaml
+check_final: false
+copies:
+  - {classifier: run3_cls_s42_*, segmenter: run3_seg_s42_*}
+  - {classifier: run3_cls_s43_*, segmenter: run3_seg_s43_*}
+  - {classifier: run3_cls_s44_*, segmenter: run3_seg_s44_*}
+confidence: configs/confidence_run3.yaml   # пометка «проверьте» (E0.6), выбрана только на val (src/confidence.py)
+mode_detector: run3_mode_s42_*              # определитель режима (П6, src/eval_mode.py)
+core_edema: {t1c: [run3_core_s42_*, run3_core_s43_*, run3_core_s44_*], t1c_flair: [run3_core_flair_s42_*]}  # П7, src/eval_core.py
